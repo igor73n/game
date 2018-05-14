@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://shemas.android.com/apk/res/android"
+    orientation="vertical"
+    android:layot_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+    <com.example.eugene2.flappybird.GameBasic
+        android:id="@+id/game2"
+        android:layout_height="match_parent"
+        android:layout_widht="match_parent" />
+</LinearLayout>
