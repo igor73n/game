@@ -16,10 +16,14 @@ public class GameBasic extends SurfaceView  {
     private Bitmap bgg;
     private Bitmap pipe;
     private Bitmap bird;
+    private Bitmap grass;
+    private Bitmap x5;
     private SurfaceHolder holder2;
     private SpriteStolbi sprite;
     private  GameManager gameManag;
     private SpriteBird spriteBird;
+    private SpriteGrass spriteGrass;
+    private SpriteOver spriteOver;
     public int l;
 
 
@@ -58,8 +62,12 @@ public class GameBasic extends SurfaceView  {
         bgg = BitmapFactory.decodeResource(getResources(), R.drawable.bgg);
         pipe = BitmapFactory.decodeResource(getResources(), R.drawable.pipe);
         bird = BitmapFactory.decodeResource(getResources(), R.drawable.bird);
+        grass = BitmapFactory.decodeResource(getResources(), R.drawable.grass);
+        x5 = BitmapFactory.decodeResource(getResources(), R.drawable.x5);
         sprite = new SpriteStolbi(this,pipe);
         spriteBird = new SpriteBird(this, bird);
+        spriteGrass = new SpriteGrass(this, grass);
+        spriteOver = new SpriteOver(this, x5);
     }
 
     @Override
@@ -75,6 +83,8 @@ public class GameBasic extends SurfaceView  {
         canvas.drawBitmap(bgg, 10, 10, null);
         sprite.onDraw(canvas);
         spriteBird.onDraw(canvas);
+        spriteGrass.onDraw(canvas);
+        spriteOver.onDraw(canvas);
     }
 
 

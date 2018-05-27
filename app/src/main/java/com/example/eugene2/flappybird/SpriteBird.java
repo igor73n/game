@@ -30,7 +30,6 @@ public class SpriteBird {
     static int wst;
 
 
-
 // @Override
    // public void onCreate(Bundle savedInstanceState) {
     // super.onCreate(savedInstanceState);
@@ -49,6 +48,7 @@ public class SpriteBird {
 
 
 
+
         gameBasic.post(new Runnable() {
             @Override
             public void run() {
@@ -56,7 +56,7 @@ public class SpriteBird {
                 h = gameBasic.getHeight();
                 x = w/2 - w/4;
                 y = h/2;
-                //sr = x + widht;
+
             }
         });
     }
@@ -89,9 +89,23 @@ public class SpriteBird {
         }
 
 
+        if ( x2 == x + widht  && y + height > y2 && y2 != 0 ) {
+            ySpeed = 5;
+            gameBasic.l = 0;
+            st = 1;
+        }
+
         if ( x2 < x + widht  && y + height > y2 && x2 + wst > x && y2 != 0 ) {
 
             ySpeed = 0;
+            gameBasic.l = 0;
+            st = 1;
+        }
+
+
+        if (x3 == x + widht && y < y3 - height*4) {
+
+            ySpeed = 5;
             gameBasic.l = 0;
             st = 1;
         }
@@ -103,15 +117,23 @@ public class SpriteBird {
             st = 1;
         }
 
-        if ( x3 < x + widht  && y + height > y3 && x3 + wst > x && y3 != 0 ) {
 
+        if ( x3 == x + widht  && y + height > y3 && y3 != 0 ) {
             ySpeed = 5;
             gameBasic.l = 0;
             st = 1;
         }
 
-        if (y > gameBasic.getHeight() - height) {
+
+        if ( x3 < x + widht  && y + height > y3 && x3 + wst > x && y3 != 0 ) {
+
             ySpeed = 0;
+            gameBasic.l = 0;
+            st = 1;
+        }
+
+        if (y > SpriteGrass.getY() - height && SpriteGrass.getY() != 0) {
+          ySpeed = 0;
             st = 1;
         }
 
@@ -119,7 +141,9 @@ public class SpriteBird {
         y = y - gameBasic.l;
        y = y + ySpeed;
         gameBasic.l = 0;
-        currentFrame = ++currentFrame % BMP_COLUMNS;
+        if (st != 1) {
+            currentFrame = ++currentFrame % BMP_COLUMNS;
+        }
     }
 
 

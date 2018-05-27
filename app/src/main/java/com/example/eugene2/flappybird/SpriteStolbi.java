@@ -43,14 +43,14 @@ public class SpriteStolbi {
                 w = gameBasic.getWidth();
                 h = gameBasic.getHeight();
                 x = w;
-                s = w + w/2;
-                mr = h/2;
-                nr = h/2;
-                m = random.nextInt(mr) + h/4;
-                n = random.nextInt(nr) + h/4;
+                s = w + w / 2;
+                mr = h / 2;
+                nr = h / 2;
+                m = random.nextInt(mr) + h / 4;
+                n = random.nextInt(nr) + h / 4;
                 mst = m; //+ pipe.getHeight();
                 nst = n; //+ pipe.getHeight();
-               // xst = x;
+                // xst = x;
             }
         });
     }
